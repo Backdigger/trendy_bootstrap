@@ -1,0 +1,572 @@
+/*FONT AWESOME*/
+@font-face {
+  font-family: "FontAwesome";
+  src: url("../fonts/fontawesome-webfont.eot");
+  src: url("../fonts/fontawesome-webfont.eot") format("embedded-opentype"),
+  url("../fonts/fontawesome-webfont.woff") format("woff"),
+  url("../fonts/fontawesome-webfont.ttf") format("truetype"),
+  url("../fonts/fontawesome-webfont.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin section-heading {
+  h2 {
+    font-family: open_sans_bold;
+    font-size: 56px;
+    @media (max-width: 990px) {
+      font-size: 40px;
+    }
+  }
+  p {
+    font-family: open_sans_bold;
+  }
+}
+
+@mixin brown-button {
+  margin-top: 50px;
+  height: 32px;
+  color: white;
+  background-color: #c59a6d;
+  width: 170px;
+  max-width: 100%;
+  margin-bottom: 250px;
+  border-radius: 0;
+  &:hover {
+    background-color: black;
+  }
+}
+
+
+
+
+
+body {
+  p {
+    @media screen and (max-width: $screen-sm) {
+      font-size: 12px;
+    }
+  }
+  img {
+    @media (max-width: $screen-sm) {
+      margin: 0 auto;
+    }
+  }
+  .background-top {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #1b1a18;
+      opacity: .9;
+    }
+  }
+
+  .background {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #1b1a18;;
+      opacity: .9;
+      z-index: -1;
+    }
+  }
+
+  /*against red border in IE*/
+  input:invalid {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  textarea {
+    outline: none !important;
+  }
+}
+
+.header {
+  background: url("http://placehold.it/1600x872") center center no-repeat;
+  background-size: cover;
+  z-index: 1;
+  @media (max-width: $screen-sm) {
+    margin-top: -20px;
+  }
+}
+
+/*SECTION HOME*/
+
+.home {
+  height: 872px;
+  position: relative;
+
+  .home-title {
+    position: absolute;
+    top: 38%;
+    width: 100%;
+    color: white;
+
+    &__headline {
+      font-size: 128px;
+      @media (max-width: 990px) {
+        font-size: 50px;
+      }
+      span:after {
+        content: "";
+        display: block;
+        width: 170px;
+        border-bottom: 4px solid #c59a6d;
+        margin: 0 auto;
+        padding-top: 8px;
+      }
+    }
+  }
+  .home-button {
+    margin-top: 782px;
+    border: 1px solid white;
+    border-radius: 0;
+    color: #c69b6e;
+    .fa {
+      font-size: 2em;
+    }
+  }
+}
+
+
+
+/*SECTION ABOUT*/
+
+
+
+
+
+
+  .about {
+    padding-bottom: 67px;
+    padding-top: 71px;
+    @include section-heading;
+    h3 {
+      font-size: 18px;
+      font-family: open_sans_bold;
+      color: #c69b6e;
+      @media ($screen-sm) {
+        font-size: 14px;
+      }
+      img {
+        margin: 0 auto;
+      }
+    }
+
+    .logo-block {
+      min-width: 70px;
+      height: 70px;
+      vertical-align: middle;
+      display: table-cell;
+      border: 1px solid #c59a6d;
+      margin-bottom: 30px;
+      padding: 0 0 0 9px;
+      @media (max-width: $screen-sm) {
+        max-width: 35px;
+        height: 1px;
+        padding: 0 0 0 4px;
+      }
+      @media (max-width: $screen-xs) {
+        max-width: 22px;
+        height: 1px;
+        padding: 0 0 0 4px;
+      }
+
+    }
+
+  .team__name {
+    margin-top: 30px;
+    @media (max-width: $screen-md) {
+      padding: 0;
+      text-align: center;
+    }
+    li {
+      padding-right: 2px;
+    }
+  }
+    .team__text {
+      margin-bottom: 75px;
+    }
+
+    span {
+      display: inline-flex;
+      &:first-of-type {
+        color: #c69b6e;
+        margin-right: 10px;
+      }
+    }
+    .media-button {
+      color: #777;
+    }
+
+    .load_button {
+      margin-top: 54px !important;
+      width: 170px;
+      margin-bottom: 130px !important;
+      @include brown-button;
+      &:after {
+        content: "";
+        display: block;
+        border-bottom: 1px solid #c59a6d;
+        height: 88px;
+
+      }
+    }
+  }
+
+
+
+
+/*SECTION WORKS*/
+.works {
+  background-color: black;
+  padding-bottom: 93px;
+  padding-top: 66px;
+  &__header {
+    @include section-heading;
+  }
+
+  color: white;
+  &__text {
+    margin-bottom: 75px;
+  }
+  .work-caption p:first-of-type {
+    color: #c59a6d;
+    font-size: 18px;
+    font-family: open_sans_bold;
+    &:after {
+      content: "";
+      display: block;
+      width: 70px;
+      border-bottom: 1px solid #c59a6d;
+      padding-top: 8px;
+    }
+  }
+  .controls {
+    width: 100%;
+    display: inline-flex;
+  }
+
+}
+
+
+
+
+
+/*SECTION SERVICES*/
+.services {
+  padding-bottom: 76px;
+  padding-top: 70px;
+  img {
+    margin: 0 auto;
+  }
+  &__text {
+    margin-bottom: 72px;
+  }
+  &__header {
+    @include section-heading;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #c59a6d;
+    width: 170px;
+    margin: 0 auto;
+    height: 61px;
+  }
+  .services-block p:first-of-type {
+    margin: 30px 0;
+    font-size: 18px;
+    color: #c59a6d;
+  }
+  .services-img {
+    border: 1px solid #dddcdc;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+    padding: 32px;
+  }
+  .fa {
+    font: normal normal normal 16px/1 FontAwesome;
+    font-size: 3.5em!important;
+    color: #c59a6d;
+  }
+}
+
+
+/*SECTION PRICING*/
+.pricing {
+  padding-bottom: 111px;
+  .pricing__header {
+    @include section-heading;
+    margin-bottom: 85px;
+  }
+  .well {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    p:first-of-type {
+      margin-top: 22px;
+      font-size: 18px;
+      font-family: open_sans_bold;
+      color: #c59a6d;
+    }
+    p:nth-of-type(2) {
+      font-size: 72px;
+      margin-bottom: -24px;
+      font-family: open_sans_bold;
+    }
+    p:nth-of-type(3) {
+      font-family: open_sans_bold;
+      &:after {
+        content: "";
+        display: block;
+        border-bottom: 1px solid #c59a6d;
+        width: 70px;
+        margin: 22px auto;
+      }
+    }
+    .btn {
+      @include brown-button;
+      margin: 36px auto;
+      height: 100%;
+    }
+    &:hover {
+      background-color: white;
+      margin-top: 0;
+      margin-bottom: 0;
+      p:first-of-type {
+        margin-top: 37px;
+      }
+      .btn {
+        margin-bottom: 51px;
+      }
+    }
+  }
+}
+
+/*SECTION VIDEO*/
+.video {
+  background: url("http://placehold.it/1600x350") center center no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 350px;
+  .video-block {
+
+    position: absolute;
+    top: 38%;
+    width: 100%;
+    p {
+      color: white;
+      font-size: 32px;
+      font-family: open_sans_bold;
+      &:first-of-type:after {
+        content: "";
+        display: block;
+        border-bottom: 1px solid #c59a6d;
+        padding-top: 8px;
+        width: 100px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+
+/*SECTION TESTIMONIALS AND CLIENTS*/
+.clients {
+  padding-top: 66px;
+  padding-bottom: 65px;
+  &__header {
+    @include section-heading;
+  }
+  img {
+    margin: 0 auto;
+  }
+  &-text {
+    margin-bottom: 70px;
+  }
+
+  .under-line {
+    margin-bottom: 100px;
+    &:after {
+      content: "";
+      display: block;
+      width: 170px;
+      margin: 0 auto;
+      padding-top: 16px;
+      border-bottom: 1px solid #dddcdc;
+    }
+  }
+  &-carousel {
+    margin: 30px auto;
+    &__text {
+      display: inline-flex;
+
+      span:first-of-type {
+        font-size: 14px;
+        margin-right: 10px;
+      }
+      span:last-of-type {
+        font-size: 12px;
+        margin-top: 2px;
+        color: #777;
+      }
+    }
+  }
+  &__spacing {
+    margin: 10px 0;
+  }
+}
+/*SECTION FACTS*/
+.facts {
+  padding-top: 70px;
+  background: url("http://placehold.it/1600x424") center center no-repeat;
+  background-size: cover;
+  padding-bottom: 77px;
+  color: white;
+  z-index: 3;
+  @include section-heading;
+  &-text {
+    margin-bottom: 50px;
+  }
+  .fa {
+    font: normal normal normal 16px/1 FontAwesome;
+    font-size: 3.1em!important;
+  }
+  .media-left {
+    vertical-align: top;
+    padding: 20px 19px 0 18px;
+  }
+  .media-body p:first-of-type {
+    font-size: 56px;
+    font-family: open_sans_bold;
+    margin: 0;
+  }
+  .media-body p:last-of-type {
+    color: #c59a6d;
+  }
+  .content {
+    display: inline-block;
+  }
+}
+
+/*SECTION CONTACT*/
+.contact {
+  padding-top: 70px;
+  padding-bottom: 99px;
+  @include section-heading;
+  textarea {
+    resize: none;
+  }
+  .form-group {
+    margin: 15px 0;
+  }
+  .form-control {
+    padding: 17px 13px;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: #f6f6f6;
+  }
+  input {
+    height: 48px;
+  }
+  ::-webkit-input-placeholder { color:#777; }
+  ::-moz-placeholder { color:#777; } /* firefox 19+ */
+  :-ms-input-placeholder { color:#777; } /* ie */
+  input:-moz-placeholder { color:#777; }
+  .btn {
+    color: white;
+    background-color: #c59a6d;
+    margin: 53px auto 0;
+    padding: 14px 40px;
+    font-size: 14px;
+    border-radius: 0;
+    &:hover {
+      background-color: black;
+    }
+    @media (max-width: $screen-sm) {
+      max-width: 220px;
+      height: 48px;
+      padding: 0 15px;
+    }
+  }
+  &-text {
+    margin-bottom: 57px;
+  }
+}
+
+/*SECTION LOCATION*/
+.location {
+  padding-top: 70px;
+  background: url("http://placehold.it/1600x468") center center no-repeat;
+  background-size: cover;
+  padding-bottom: 18px;
+  color: white;
+  position: relative;
+  z-index: 1;
+  &__header {
+    @include section-heading;
+    &:after {
+      display: block;
+    }
+  }
+  &-text {
+    margin-bottom: 70px;
+  }
+  &-block {
+    margin: 0 auto 20px auto;
+    display: inline-block;
+    .logo-img {
+      width: 80px;
+    }
+  }
+  .fa {
+    font: normal normal normal 16px/1 FontAwesome;
+    font-size: 3em!important;
+    color: white;
+  }
+  .media-body {
+    font-size: 14px;
+    width: 148px;
+    p:first-of-type {
+      font-size: 18px;
+      font-family: open_sans_bold;
+      color: #c59a6d;
+      margin-bottom: 30px;
+    }
+  }
+  .media-left {
+    vertical-align: top;
+  }
+
+}
+
+/*FOOTER*/
+
+.footer {
+  color: black;
+  p {
+    margin: 1em auto;
+  }
+  a {
+    color: black;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,154 @@
+.dark {
+  background-color: #31302f;
+  color: white;
+/*page1*/
+  .background-top:before {
+    background-color: #c7a077;
+  }
+  .navbar {
+    background-color: rgba(199, 164, 127, 1) !important;
+    a.active {
+      color: white;
+    }
+  }
+  .fa-angle-down, .about, .services, .clients, .contact, .footer, .footer a {
+    color: white;
+  }
+  .timeline-panel {
+    border: 1px solid #7f7e7e !important;
+    &:after {
+      background-color: #7f7e7e !important;
+    }
+  }
+  .timeline-badge {
+    border: 3px solid #31302f !important;
+  }
+  .logo-block {
+    border: 1px solid #7f7e7e;
+  }
+  .pricing {
+    .pricing__header {
+      color: white;
+    }
+    .well {
+      color: black;
+      &:hover {
+        background-color: #31302f;
+        color: white;
+      }
+    }
+  }
+  .video:before {
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #c7a077;
+    opacity: .5;
+    z-index: 2;
+    display: block;
+    height: 100%;
+  }
+
+  .facts .media-body p:last-of-type {
+    color: black;
+  }
+
+  .form-control {
+    background-color: #373634;
+  }
+  .background:before {
+    opacity: 0.9;
+    background-color: #c59a66;
+  }
+  .location {
+    .media-body p:first-of-type {
+      color: black;
+    }
+  }
+  /*modal window*/
+  .modal-content {
+    background-color: #31302f;
+    color: white;
+    .well {
+      background-color: #2c2b2a;
+    }
+  }
+  /*blog-list*/
+.blog-header, .blog-left .fa {
+  color: white;
+}
+  .blog-sidebar {
+    .input-group .form-control, .newsletter-block input {
+      background-color: #373634 !important;
+    }
+    .list-group-item {
+      background-color: #31302f;
+    }
+    .sidebar-widget {
+      background-color: #2c2b2a;
+      .calender td.selected {
+        color: #c59a6d;
+      }
+    }
+    .navigation {
+      color: white !important;
+    }
+    td {
+      color: #a9a9a9;
+    }
+  }
+  
+  .mejs-container {
+    background: #2c2b2a;
+    .fa {
+      color: white !important;
+    }
+    span {
+      color: #777 !important;
+    }
+  }
+
+  .quote-inner {
+    background-color: #2c2b2a;
+  }
+  .pagination {
+    > .disabled > a {
+      background-color: #2c2b2a !important;
+    }
+    > li > a {
+      background-color: #31302f !important;
+    }
+  }
+  /*blog-post*/
+  .standart-list {
+    .btn-group .btn-default:first-of-type, .comments .media {
+      background-color: #31302f;
+
+    }
+    .btn-group .disabled {
+      background-color: #31302f;
+      color: white !important;
+      border: 1px solid white;
+    }
+
+    .blog-letter:first-letter {
+      color: white;
+    }
+    .checked li:before, ol li:before {
+      background: #2c2b2a;
+    }
+
+    .fa-tags {
+      color: white;
+    }
+  }
+  .related .caption p {
+    color: white;
+  }
+  .comments .media {
+    background-color: #31302f;
+  }
+
+}
