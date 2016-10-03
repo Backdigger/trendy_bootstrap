@@ -33,7 +33,7 @@ jQuery(window).scroll(function(){
 });
 
 
-$("#menu").on("click",'a', function (event) {
+$("#menu").on("click",'a[href^="#"]', function (event) {
     event.preventDefault();
     var id  = $(this).attr('href'),
         top = $(id).offset().top;
@@ -257,8 +257,58 @@ $(window).resize(function() {
 // $('.navbar-brand').html('<img src="../img/trendy-white.png" alt="TRENDY logo">');
 
 
+/*button toggling off-canvas panel*/
+$('.arrow-btn').click(function() {
+    $("i", this).toggleClass("fa-angle-right fa-angle-left");
+});
 
+/*SWIPER*/
 
+$(function() {
+    var swiper1 = new Swiper('.s1', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        paginationClickable: true,
+        spaceBetween: 30,
+        loop: true,
+
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is <= 320px
+            320: {
+                slidesPerView: 1,
+                spaceBetweenSlides: 10
+            },
+            // when window width is <= 480px
+            480: {
+                slidesPerView: 1,
+                spaceBetweenSlides: 20
+            },
+            // when window width is <= 640px
+            640: {
+                slidesPerView: 1,
+                spaceBetweenSlides: 30
+            }
+        }
+    });
+
+    var swiper2 = new Swiper('.s2', {
+        pagination: '.modal .swiper-pagination',
+        nextButton: '.modal .swiper-button-next',
+        prevButton: '.modal .swiper-button-prev',
+        wrapper: '.modal .swiper-wrapper',
+        direction: 'horizontal',
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        paginationClickable: true,
+        // spaceBetween: 30,
+        loop: true
+
+    });
+});
 
 
 

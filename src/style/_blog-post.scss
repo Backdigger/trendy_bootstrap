@@ -2,21 +2,39 @@ body {
   counter-reset: item;
 }
 
+.heading-post {
+  &:after {
+    margin: 19px 0 30px 0 !important;
+  }
+}
+
 /*section with standart post*/
 .standart-list {
+  h3 {
+    margin-top: 3px;
+  }
   p {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
   }
   p, li {
     font-size: 14px;
   }
-  .blog-letter:first-letter {
-    float: left;
-    font-size: 51px;
-    line-height: 52px;
-    font-weight: 700;
-    padding-right: 15px;
-    color: black;
+  .blog-left {
+    margin-top: 6px;
+  }
+  .set-down {
+    margin-top: 44px;
+  }
+  .blog-letter {
+    margin-top: -40px;
+    &:first-letter {
+      float: left;
+      font-size: 51px;
+      line-height: 52px;
+      font-weight: 700;
+      padding-right: 15px;
+      color: black;
+    }
   }
   .label, .label-right {
     color: #e2e2e2;
@@ -44,6 +62,12 @@ body {
         text-align: center;
         display: inline-block;
       }
+      &:first-of-type {
+        margin-top: 25px;
+      }
+      &:last-of-type {
+        margin-bottom: 28px;
+      }
     }
   }
   .checked {
@@ -64,6 +88,12 @@ body {
         text-align: center;
         display: inline-block;
       }
+      &:first-of-type {
+        margin-top: 45px;
+      }
+      &:last-of-type {
+        margin-bottom: 26px;
+      }
     }
   }
 
@@ -71,7 +101,7 @@ body {
     .btn {
       height: 24px;
       line-height: 0.6em;
-      padding-left: 6px;
+      padding: 5px;
     }
     a {
       width: 24px;
@@ -106,15 +136,27 @@ body {
   }
   .quote-inner {
     background-color: #f6f6f6;
-    padding: 20px 13px;
+    padding: 16px 13px;
     margin-bottom: 32px;
-    margin-top: 62px;
+    margin-top: 85px;
+    .blockquote {
+      padding: 27px 30px;
+
+        .quote-content:after {
+          border-bottom: 1px solid #c59a6d;
+          margin: 20px 0;
+        }
+      }
+
   }
   .blog-tags {
-    margin-top: 29px;
-    margin-bottom: 94px;
+    margin-top: 51px;
+    margin-bottom: 97px;
     margin-left: 61px;
     color: #e2e2e2;
+    @media (max-width: $screen-xs) {
+      margin-left: 0;
+    }
   }
 
 }
@@ -125,8 +167,9 @@ body {
 
 .quote-inner {
   background-color: #f6f6f6;
-  padding: 20px 13px;
+  padding: 0;
   margin-bottom: 100px;
+
   blockquote {
     border: 1px solid #c59a6d;
     margin: 0;
@@ -161,7 +204,10 @@ body {
     margin-left: 10px;
     margin-right: 66px;
     padding: 16px 27px;
-    margin-bottom: 84px;
+    margin-bottom: 93px !important;
+    @media (max-width: $screen-xs) {
+      margin: 0 0 84px 0;
+    }
   }
   .media-heading {
     font-family: open_sans_bold;
@@ -186,7 +232,13 @@ body {
     &:last-of-type {
       font-size: 12px;
       float: right;
+      @media (max-width: $screen-xs) {
+        float: left;
+      }
       a {color: #777;}
+    }
+    .fa {
+      color: #777;
     }
   }
 }
@@ -220,10 +272,10 @@ body {
   .thumbnail {
     padding: 29px;
     width: 370px;
-    max-width: 370px;
     min-height: 457px;
     position: relative;
     margin-left: 15px;
+    margin-bottom: 24px;
     &:first-of-type {
       margin-right: 15px;
 
@@ -240,10 +292,17 @@ body {
         margin: 20px 0;
       }
     }
+    @media (max-width: $screen-lg) {
+      width: 40%;
+    }
     @media (max-width: $screen-sm) {
       margin-left: 10px;
-      width:  41.66667%;;
+      width:  41.66667%;
     }
+    @media (max-width: $screen-xs) {
+      width: 93%;
+    }
+
 
   }
 }
@@ -306,11 +365,18 @@ body {
 
 /*section with form group*/
 .reply {
-  margin-top: 10px;
+  margin-top: 89px;
+  .heading-post {
+    &:after {
+      margin: 19px 0 24px !important;
+    }
+
+  }
   textarea {
     resize: none;
   }
   .form-horizontal {
+    margin-top: 30px;
     margin-right: 67px !important;
     @media (max-width: $screen-lg) {
       margin-right: 0 !important;
@@ -336,7 +402,7 @@ body {
   .btn {
     color: #fff;
     background-color: #c59a6d;
-    margin: 33px auto 99px auto;
+    margin: 27px auto 99px auto;
     padding: 14px 45px;
     font-size: 14px;
     border-radius: 0;

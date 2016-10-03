@@ -64,6 +64,7 @@
       width: auto;
       margin: 0;
       left: 77%;
+
       .outer-slider__left {
         display: inline-block;
         float: right;
@@ -73,11 +74,16 @@
         @media (max-width: $screen-sm) {
           width: 175px;
         }
-        @media (max-width: $screen-xs) {
-          width: 92px;
-        }
+        //@media (max-width: $screen-xs) {
+        //  width: 175px;
+        //}
         span {
           margin-left: 30px;
+          margin-top: 12px;
+          display: inline-block;
+          @media (max-width: $screen-md) {
+            margin-top: 0;
+          }
           @media (max-width: $screen-sm) {
             font-size: 14px;
             margin-left: 1px;
@@ -95,27 +101,29 @@
       right: 3%;
       .outer-slider__right {
         float: left;
-        display: inline-block;
+
         @media (max-width: $screen-md) {
           width: 266px;
         }
         @media (max-width: $screen-sm) {
-          width: 165px;
+          width: 136px;
         }
-        @media (max-width: $screen-xs) {
-          width: 92px;
-        }
+
         span {
           font-family: open_sans_bold;
           margin-right: 30px;
-          margin-top: 6%;
+          margin-top: 12px;
+          display: inline-block;
+          @media (max-width: $screen-md) {
+            margin-top: 0;
+          }
           @media (max-width: $screen-sm) {
             font-size: 14px;
             margin-right: 1px;
+            display: inline-block;
           }
           @media (max-width: $screen-xs) {
             font-size: 10px;
-            margin-top: 37%;
 
           }
         }
@@ -125,29 +133,50 @@
       background-color: transparent !important;
     }
     .fa {
-      font-size: 3em;
+      font-size: 2em;
       color: #c59a6d;
       border: 1px solid #b6b6b6;
       border-radius: 0;
-      height: 70px;
-      width: 70px;
+      height: 56px;
+      width: 56px;
+      padding-top: 6px;
+      @media (max-width: $screen-sm) {
+        height: 40px;
+        width: 40px;
+        font-size: 1.5em;
+        padding-top: 4px;
+      }
+      @media (max-width: $screen-xs) {
+        height: 35px;
+        width: 35px;
+        padding-top: 2px;
+      }
     }
   }
   .carousel-indicators {
     position: absolute;
     bottom: 30px;
-    left: 50%;
+    left: 49%;
     z-index: 15;
     width: 60%;
     padding-left: 0;
-    margin-left: -46%;
+    margin-left: -44%;
     text-align: left;
     list-style: none;
+    li {
+      margin-right: 10px;
+      @media (max-width: $screen-xs) {
+        margin-right: 3px;
+      }
+    }
   }
 
   .well {
-    margin-top: 50px;
-
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 30px;
+    margin-bottom: 100px;
     &__title {
       display: inline-flex;
       span:first-of-type {
@@ -173,6 +202,9 @@
         }
 
       }
+    }
+    .well__title:last-of-type {
+      margin: 55px 0 0 0;
     }
   }
 
@@ -238,7 +270,7 @@
 // Where all modal content resides (sibling of .modal-header and .modal-footer)
 .modal-body {
   position: relative;
-  padding: $modal-inner-padding;
+  padding: 28px !important;
 }
 
 // Footer (for actions)
@@ -246,6 +278,7 @@
   padding: $modal-inner-padding;
   height: 160px;
   text-align: right; // right align buttons
+  position: relative;
   @include clearfix; // clear it in case folks use .pull-* classes on buttons
 
   // Properly space out buttons
@@ -309,30 +342,35 @@
 
   h5 {
     font-size: 24px;
-    margin: 30px auto;
+    font-family: open_sans_bold;
+    margin: 50px auto 30px auto;
     color: #c59a6d;
   }
   p {
     font-size: 16px;
+    margin: 0 0 30px !important;
   }
 }
 
 .modal-info {
   h5 {
-    margin-top: 30px;
+    margin-top: 50px;
+    font-family: open_sans_bold;
     &:after {
       content: "";
       display: block;
       border-bottom: 2px solid #c59a6d;
       width: 70px;
-      margin: 30px 0;
+      margin: 30px 0 42px 0;
     }
   }
   p {
     font-size: 14px;
     margin: 30px 0;
   }
-
+  .make-bold {
+    font-family: open_sans_bold;
+  }
 }
 
 
@@ -403,16 +441,19 @@
     }
     .fa {
       background-color: #2c2b29;
-      height: 70px;
-      width: 70px;
+      height: 56px;
+      width: 56px;
+      font-size: 2em;
+      display: table-cell;
+      vertical-align: middle;
       @media (max-width: $screen-sm) {
-        height: 50px;
-        width: 50px;
-        font-size: 2.2em;
-      }
-      @media (max-width: $screen-xs) {
         height: 40px;
         width: 40px;
+        font-size: 1.5em;
+      }
+      @media (max-width: $screen-xs) {
+        height: 35px;
+        width: 35px;
       }
     }
 
@@ -421,6 +462,53 @@
     background-color: #2c2b29;
     &.active {
       background-color: #c59a6d;
+    }
+  }
+}
+
+
+
+#carousel-modal {
+  .carousel-control {
+    .fa {
+      background-color: #2c2b29;
+      height: 56px;
+      width: 56px;
+      font-size: 2em;
+      padding-top: 0;
+      @media (max-width: $screen-sm) {
+        height: 40px;
+        width: 40px;
+        font-size: 1.5em;
+      }
+      @media (max-width: $screen-xs) {
+        height: 35px;
+        width: 35px;
+      }
+    }
+    &.left {
+      margin: 0;
+      left: 78% !important;
+      @media (max-width: $screen-xs) {
+        left: 74%;
+      }
+    }
+    &.right {
+      margin: 0;
+      left: 88% !important;
+
+    }
+  }
+}
+
+.modal-footer {
+  .carousel-control {
+
+    &.left {
+
+      @media (max-width: $screen-sm) {
+        bottom: 60px;
+      }
     }
   }
 }

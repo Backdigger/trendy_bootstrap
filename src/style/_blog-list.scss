@@ -3,24 +3,37 @@
   padding-bottom: 88px !important;
   border-bottom: 1px solid #ccc;
   @include section-heading;
+  @media (max-width: $screen-md) {
+    margin-top: 105px!important;
+    padding-bottom: 22px!important;
+  }
+  @media (max-width: $screen-xs) {
+    margin-top: 77px !important;
+    padding-bottom: 3px !important;
+  }
 }
 
 
-body {
+
   .btn, a {
     &:hover, &:active, &:focus {
       outline: none;
     }
   }
-}
+  .blog-active {
+    color: #c69b6e !important;
+    border: 1px solid white !important;
+    border-radius: 0;
+  }
 
 @mixin blog__top {
   .blog-left {
     width: 70px;
-    height: 120px;
+    height: 124px;
     border: 1px solid #777;
-    margin-right: 30px;
-    padding: 4px 0;
+    margin-right: 19px;
+    padding: 8px 0;
+
     p {
       margin: 3px 0;
       &:first-of-type {
@@ -55,7 +68,7 @@ body {
       display: block;
       width: 70px;
       border-bottom: 1px solid #c59a6d;
-      margin: 70px 0 70px 5px;
+      margin: 21px 0 25px 0;
       @media (max-width: $screen-xs) {
         margin: 70px 0 70px 107px;
       }
@@ -77,7 +90,7 @@ body {
     font-weight: 700;
     line-height: 17px;
     border-radius: 0;
-    margin: 50px 0 90px 0;
+    margin: 34px -2px 85px;
     &:hover {
       background-color: #c59a6d;
       color: black;
@@ -102,10 +115,15 @@ body {
 
 /*GALLERY POST*/
 .gallery {
-  @include blog__top;
   .carousel-inner {
-    max-height: 300px !important;
-    min-height: 0;
+    margin-bottom: 0 !important;
+  }
+  @include blog__top;
+  @media (max-width: $screen-sm) {
+    .carousel-inner {
+      max-height: 300px !important;
+      min-height: 0;
+    }
   }
   .carousel-indicators {
     position: absolute;
@@ -145,16 +163,14 @@ body {
 }
 /*MUSIC POST*/
 .music {
+  padding-top: 15px;
+  padding-bottom: 83px;
   @include blog__top;
 
   .mejs-container {
-    //@media (max-width: $screen-sm) {
-    //  width: 400px;
-    //}
     span, .fa {
       color: black !important;
     }
-
   }
 }
 
@@ -167,7 +183,9 @@ body {
   video {
     width: 100% !important;
   }
-
+.btn {
+  margin: 34px -2px 52px;
+}
 }
 /*QUOTE POST*/
 .quote {
@@ -188,14 +206,14 @@ body {
         display: block;
         width: 70px;
         border-bottom: 1px solid #c59a6d;
-        margin: 30px 0;
+        margin: 17px 0;
       }
     }
   }
   &-inner {
     background-color: #f6f6f6;
     padding: 20px 13px;
-    margin-bottom: 100px;
+    margin-bottom: 50px !important;
   }
   p {
     @media (max-width: $screen-xs) {
@@ -213,6 +231,9 @@ body {
 .blog-sidebar {
   @media (max-width: $screen-lg) {
     margin-top: 39px;
+  }
+  @media (max-width: $screen-sm) {
+    margin-top: 100px;
   }
   li {
     @media (max-width: $screen-xs) {
@@ -268,24 +289,33 @@ body {
   .sidebar-heading {
     font-size: 24px;
     font-family: open_sans_bold;
-    margin-top: 59px;
+    margin-top: 66px;
+    letter-spacing: -3.5px;
     &:after {
       content: "";
       display: block;
       width: 70px;
-      border-bottom: 1px solid #c59a6d;
-      margin: 31px 0;
+      border-bottom: 2px solid #c59a6d;
+      margin: 22px 0 30px;
     }
     @media (max-width: $screen-sm) {
       font-size: 18px;
     }
   }
+  .flickr {
+    &:after {
+      margin: 22px 0 -8px;
+    }
+  }
+  .text-widget {
+    margin-top: 49px;
+  }
   .popular-post {
     border: 1px solid #ccc;
     margin-top: 14px;
-    padding: 18px 37px;
+    padding: 21px 38px 13px 38px;
     p {
-      margin-bottom: -9px;
+      margin-bottom: -4px;
       font-family: open_sans_bold;
       font-size: 18px;
       color: #c59a6d;
@@ -296,18 +326,30 @@ body {
     }
   }
   .top-margin {
-    margin-top: 13px;
+    margin-top: 29px;
   }
   .sidebar-widget {
-    padding: 14px 37px;;
+    padding: 18px 37px;
     background-color: #f6f6f6;
+    margin-bottom: -9px;
     @media (max-width: $screen-xs) {
       padding: 10px;
     }
   }
+  .popular-tags {
+    &:after {
+      margin: 22px 0 25px;
+    }
+  }
+  .newsletter {
+    margin-top: 60.5px;
+  }
   .newsletter-block {
     border: 1px solid #ccc;
-    padding: 30px;
+    padding: 24px 26px 30px 32px;
+    p {
+      margin-bottom: 22px;
+    }
     input {
       height: 49px !important;
       padding: 10px 16px !important;
@@ -324,9 +366,13 @@ body {
       margin: 25px auto 0 auto;
       font-family: open_sans_bold;
       border-radius: 0;
-      @media (max-width: $screen-md) {
+      @media (max-width: $screen-xs) {
         padding: 2px;
         font-size: 10px;
+      }
+      @media (max-width: $screen-md) {
+        padding: 8px 9px;
+        font-size: 12px;
       }
     }
   }
@@ -342,12 +388,19 @@ body {
       height: 25px !important;
       width: 25px !important;
       line-height: 22px;
-      padding-left: 8px;
       background-color: #000;
     }
     @media (max-width: $screen-sm) {
       font-size: 14px;
     }
+  }
+}
+/*Calendar styling*/
+
+#calendar_table {
+  padding: 28px 37px 1px 37px;
+  @media (max-width: $screen-md) {
+    padding: 28px 15px 1px 15px;
   }
 }
 
@@ -371,6 +424,10 @@ body {
 .calendar td.selected {
   color: #c59a6d !important;
   font-family: open_sans_bold !important;
+}
+
+.calendar a {
+  text-align: center;
 }
 
 /*OFF-CANVAS*/
@@ -444,63 +501,19 @@ footer {
 }
 
 
-
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  margin-right: -18px;
-
-  /* Hide default HTML checkbox */
-  & input {
-    display: none;
+.arrow-btn {
+  border: 1px solid #fff;
+  border-radius: 0;
+  background-color: #2c2b29;
+  color: #c59a6d;
+  position: fixed;
+  right: 2%;
+  top: 55%;
+  z-index: 2000;
+  @media (max-width: $screen-xs) {
+    right: 3%;
   }
 
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-    height: 28px;
-    width: 55px;
-    &:before {
-      position: absolute;
-      content: "";
-      height: 20px;
-      width: 20px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      -webkit-transition: .4s;
-      transition: .4s;
-    }
-    &.round {
-      border-radius: 34px;
-      &:before {
-        border-radius: 50%;
-      }
-    }
-  }
-  input:checked + .slider {
-    background-color: #c59a6d;
-  }
-  input:focus + .slider {
-    box-shadow: 0 0 1px #c59a6d;
-  }
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
 }
 
 

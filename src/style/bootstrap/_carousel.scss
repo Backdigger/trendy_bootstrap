@@ -190,8 +190,8 @@
 
   li {
     display: inline-block;
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     margin: 0;
     text-indent: -999px;
     border: 1px solid #fff;
@@ -213,8 +213,6 @@
   }
   .active {
     margin: 0;
-    width:  12px;
-    height: 12px;
     border: 1px solid transparent;
     background-color: #c59a6d;
   }
@@ -335,7 +333,7 @@
 
   .carousel-inner {
     min-height: 300px;
-    margin-bottom: 76px;
+    margin-bottom: 55px;
   }
 //}
 

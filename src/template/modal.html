@@ -1,5 +1,4 @@
 <!-- Large portfolio modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".portfolio-modal">Large modal</button>
 
 <div class="modal fade portfolio-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
@@ -10,9 +9,11 @@
             </button>
 
             <div class="modal-body">
-                <div id="carousel-outer" class="carousel slide" data-interval="false" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
+                <!--<div id="carousel-outer" class="carousel slide" data-interval="false" data-ride="carousel">-->
+                <div class="swiper-container s2">
+                    <div class="swiper-wrapper">
+                <!--<div class="carousel-inner" role="listbox">-->
+                        <div class="swiper-slide">
 
                             <div id="carousel-modal" class="carousel slide" data-interval="false" data-ride="carousel">
                                 <!-- Indicators -->
@@ -101,17 +102,17 @@
                                 </div>
                                 <div class="col-sm-3 col-sm-offset-1 modal-info">
                                     <h5>PROJECT INFO</h5>
-                                    <p>For: Levski Sofia</p>
-                                    <p>Category: Print Design</p>
-                                    <p>Skills: Photoshop, InDesign</p>
-                                    <p>Date Start: 31 March 2014</p>
-                                    <p>Date Finished: 4 May 2014</p>
-                                    <p>URL: www.levski.bg</p>
+                                    <p><span class="make-bold">For: </span>Levski Sofia</p>
+                                    <p><span class="make-bold">Category: </span>Print Design</p>
+                                    <p><span class="make-bold">Skills: </span>Photoshop, InDesign</p>
+                                    <p><span class="make-bold">Date Start: </span>31 March 2014</p>
+                                    <p><span class="make-bold">Date Finished: </span>4 May 2014</p>
+                                    <p><span class="make-bold">URL: </span>www.levski.bg</p>
                                 </div>
                             </div><!--row-->
 
                         </div><!--item active outer slider-->
-                        <div class="item">
+                        <div class="swiper-slide">
                             <img class="img-responsive" src="http://placehold.it/970x545" alt="our works">
                             <div class="row">
                                 <div class="col-sm-8 modal-blog">
@@ -164,7 +165,7 @@
                                 </div>
                             </div><!--row-->
                         </div><!--item outer slider-->
-                        <div class="item">
+                        <div class="swiper-slide">
                             <img class="img-responsive" src="http://placehold.it/970x545" alt="our works">
                             <div class="row">
                                 <div class="col-sm-8 modal-blog">
@@ -220,18 +221,21 @@
                     </div><!--carousel inner for outer slider-->
                     <div class="modal-footer">
                         <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-outer" role="button" data-slide="prev">
-                            <i class="fa fa-angle-left" aria-hidden="true"></i>
-                            <div class="outer-slider__left">
-                                <span class="text-left">Suspendisse blandit in nibh a ultrices</span>
+
+
+                            <div class="swiper-button-prev left carousel-control">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                <div class="outer-slider__left">
+                                    <span class="text-left">Suspendisse blandit in nibh a ultrices</span>
+                                </div>
                             </div>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-outer" role="button" data-slide="next">
-                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                            <div class="outer-slider__right">
-                                <span class="text-right">Morbi aliquam justo tellus</span>
+                            <div class="swiper-button-next right carousel-control">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                <div class="outer-slider__right">
+                                    <span class="text-right">Morbi aliquam justo tellus</span>
+                                </div>
                             </div>
-                        </a>
+
                     </div><!--modal footer-->
                 </div><!--carousel outer-->
             </div><!--modal-body-->

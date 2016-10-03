@@ -677,8 +677,11 @@
 
 .navbar li a {
   color: white;
-  padding: 2px 11px;
+  padding: 4px 12px;
   border: 1px solid transparent;
+  font-size: 14px;
+  font-family: open_sans_bold;
+
   @media (max-width: $screen-md) {
     font-size: 12px;
   }
@@ -694,6 +697,8 @@
 }
 
 .nav li {
+  padding-right: 2px;
+  padding-left: 2px;
   @media (max-width: $screen-sm) {
     display: block;
   }
@@ -706,6 +711,12 @@
 
 #menu li {
   padding-top: 16px;
+  &:last-of-type {
+    margin-bottom: 15px;
+  }
+}
 
+.navbar-collapse {
+  padding-right: 10px !important;
 }
 

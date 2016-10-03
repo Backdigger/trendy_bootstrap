@@ -14,8 +14,11 @@
   h2 {
     font-family: open_sans_bold;
     font-size: 56px;
-    @media (max-width: 990px) {
+    @media (max-width: $screen-md) {
       font-size: 40px;
+    }
+    @media (max-width: $screen-sm) {
+      font-size: 34px;
     }
   }
   p {
@@ -32,66 +35,72 @@
   max-width: 100%;
   margin-bottom: 250px;
   border-radius: 0;
+  font-size: 14px;
   &:hover {
     background-color: black;
   }
 }
 
+::selection {
+  background-color: #3ec546;
+}
 
 
 
 
-body {
-  p {
-    @media screen and (max-width: $screen-sm) {
-      font-size: 12px;
-    }
-  }
-  img {
-    @media (max-width: $screen-sm) {
-      margin: 0 auto;
-    }
-  }
-  .background-top {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: #1b1a18;
-      opacity: .9;
-    }
-  }
-
-  .background {
-    position: relative;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: #1b1a18;;
-      opacity: .9;
-      z-index: -1;
-    }
-  }
-
-  /*against red border in IE*/
-  input:invalid {
-    box-shadow: none !important;
-    outline: none !important;
-  }
-  textarea {
-    outline: none !important;
+p {
+  @media screen and (max-width: $screen-sm) {
+    font-size: 12px;
   }
 }
+.btn:active {
+  box-shadow: none;
+}
+img {
+  @media (max-width: $screen-sm) {
+    margin: 0 auto;
+  }
+}
+.background-top {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #1b1a18;
+    opacity: .9;
+  }
+}
+
+.background {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #1b1a18;;
+    opacity: .9;
+    z-index: -1;
+  }
+}
+
+/*against red border in IE*/
+input:invalid {
+  box-shadow: none !important;
+  outline: none !important;
+}
+textarea {
+  outline: none !important;
+}
+
 
 .header {
   background: url("http://placehold.it/1600x872") center center no-repeat;
@@ -102,21 +111,40 @@ body {
   }
 }
 
+/*NAVIGATION*/
+
+.navbar a {
+  &:hover, &:focus {
+    color: #c59a6d;
+  }
+}
+
+
 /*SECTION HOME*/
 
 .home {
-  height: 872px;
+  height: 801px;
   position: relative;
+  @media (max-width: $screen-md) {
+    height: 614px;
+  }
+  @media (max-width: $screen-sm) {
+    height: 423px;
+  }
 
   .home-title {
     position: absolute;
-    top: 38%;
+    top: 21%;
     width: 100%;
     color: white;
 
     &__headline {
       font-size: 128px;
-      @media (max-width: 990px) {
+      margin-bottom: 26px;
+      @media (max-width: $screen-md) {
+        font-size: 70px;
+      }
+      @media (max-width: $screen-sm) {
         font-size: 50px;
       }
       span:after {
@@ -130,10 +158,17 @@ body {
     }
   }
   .home-button {
-    margin-top: 782px;
+    margin-top: 710px;
     border: 1px solid white;
     border-radius: 0;
     color: #c69b6e;
+    padding: 2px 8px;
+    @media (max-width: $screen-md) {
+      margin-top: 542px;
+    }
+    @media (max-width: $screen-sm) {
+      margin-top: 362px;
+    }
     .fa {
       font-size: 2em;
     }
@@ -150,14 +185,26 @@ body {
 
 
   .about {
-    padding-bottom: 67px;
+    padding-bottom: 84px;
     padding-top: 71px;
-    @include section-heading;
+    @media (max-width: $screen-sm) {
+      padding: 30px 0;
+    }
+    h2 {
+      font-family: open_sans_bold;
+      font-size: 56px;
+      @media (max-width: 990px) {
+        font-size: 40px;
+      }
+    }
+      .team__text {
+       font-family: open_sans_bold;
+      }
     h3 {
       font-size: 18px;
       font-family: open_sans_bold;
       color: #c69b6e;
-      @media ($screen-sm) {
+      @media (max-width: $screen-sm) {
         font-size: 14px;
       }
       img {
@@ -166,53 +213,73 @@ body {
     }
 
     .logo-block {
-      min-width: 70px;
-      height: 70px;
       vertical-align: middle;
       display: table-cell;
+      min-width: 70px;
+      height: 70px;
       border: 1px solid #c59a6d;
       margin-bottom: 30px;
-      padding: 0 0 0 9px;
-      @media (max-width: $screen-sm) {
-        max-width: 35px;
-        height: 1px;
-        padding: 0 0 0 4px;
-      }
+      padding: 0 0 0 17px;
       @media (max-width: $screen-xs) {
-        max-width: 22px;
-        height: 1px;
-        padding: 0 0 0 4px;
+        width: 22px;
+        height: 36px;
+        min-width: 5px;
       }
 
     }
+    .media-left {
+      display: table-cell;
+      vertical-align: middle;
+      padding: 0 20px 23px 18px;
+      @media screen and (max-width: $screen-sm-min) {
+        padding: 0 19px 0 3px;
+      }
+    }
+
+    .team__header {
+      margin-top: 61px !important;
+    }
 
   .team__name {
-    margin-top: 30px;
+    margin-top: 31px;
     @media (max-width: $screen-md) {
       padding: 0;
       text-align: center;
     }
+    ul {
+      margin-top: 2px;
+    }
     li {
       padding-right: 2px;
     }
+    span:last-of-type {
+      font-size: 14px;
+      color: #777;
+    }
   }
     .team__text {
-      margin-bottom: 75px;
+      margin-bottom: 54px;
+    }
+    .team-text {
+      margin-bottom: 72px;
     }
 
     span {
       display: inline-flex;
       &:first-of-type {
         color: #c69b6e;
-        margin-right: 10px;
+        margin-right: 17px;
       }
     }
     .media-button {
       color: #777;
+      .fa {
+        font-size: 0.7em;
+      }
     }
 
     .load_button {
-      margin-top: 54px !important;
+      margin-top: 0 !important;
       width: 170px;
       margin-bottom: 130px !important;
       @include brown-button;
@@ -220,7 +287,7 @@ body {
         content: "";
         display: block;
         border-bottom: 1px solid #c59a6d;
-        height: 88px;
+        height: 106px;
 
       }
     }
@@ -232,15 +299,18 @@ body {
 /*SECTION WORKS*/
 .works {
   background-color: black;
-  padding-bottom: 93px;
+  padding-bottom: 91px;
   padding-top: 66px;
+  @media (max-width: $screen-sm) {
+    padding: 30px 0;
+  }
   &__header {
     @include section-heading;
   }
 
   color: white;
   &__text {
-    margin-bottom: 75px;
+    margin-bottom: 74px;
   }
   .work-caption p:first-of-type {
     color: #c59a6d;
@@ -258,6 +328,9 @@ body {
     width: 100%;
     display: inline-flex;
   }
+  .thumbnail {
+    margin-bottom: 37px;
+  }
 
 }
 
@@ -267,8 +340,11 @@ body {
 
 /*SECTION SERVICES*/
 .services {
-  padding-bottom: 76px;
+  padding-bottom: 67px;
   padding-top: 70px;
+  @media (max-width: $screen-sm) {
+    padding: 30px 0;
+  }
   img {
     margin: 0 auto;
   }
@@ -309,23 +385,31 @@ body {
 
 /*SECTION PRICING*/
 .pricing {
-  padding-bottom: 111px;
+  padding-bottom: 112px;
+  @media (max-width: $screen-sm) {
+    padding: 30px 0;
+  }
   .pricing__header {
     @include section-heading;
-    margin-bottom: 85px;
+    h2 {
+      margin-bottom: 14px;
+    }
+    margin-bottom: 83px;
   }
   .well {
     margin-top: 15px;
     margin-bottom: 15px;
+    box-shadow: none;
     p:first-of-type {
-      margin-top: 22px;
       font-size: 18px;
       font-family: open_sans_bold;
       color: #c59a6d;
+      margin-top: 30px;
+      margin-bottom: 0;
     }
     p:nth-of-type(2) {
       font-size: 72px;
-      margin-bottom: -24px;
+      margin-bottom: -15px;
       font-family: open_sans_bold;
     }
     p:nth-of-type(3) {
@@ -337,6 +421,10 @@ body {
         width: 70px;
         margin: 22px auto;
       }
+    }
+    p:last-of-type {
+      margin-top: -4px;
+      margin-bottom: 3px;
     }
     .btn {
       @include brown-button;
@@ -364,21 +452,24 @@ body {
   position: relative;
   height: 350px;
   .video-block {
-
     position: absolute;
-    top: 38%;
+    top: 34%;
     width: 100%;
     p {
       color: white;
       font-size: 32px;
       font-family: open_sans_bold;
+      @media (max-width: $screen-sm) {
+        font-size: 22px;
+      }
       &:first-of-type:after {
         content: "";
         display: block;
         border-bottom: 1px solid #c59a6d;
-        padding-top: 8px;
+        padding-top: 6px;
         width: 100px;
         margin: 0 auto;
+        margin-bottom: -8px;
       }
     }
   }
@@ -388,19 +479,25 @@ body {
 /*SECTION TESTIMONIALS AND CLIENTS*/
 .clients {
   padding-top: 66px;
-  padding-bottom: 65px;
+  padding-bottom: 87px;
+  @media (max-width: $screen-sm) {
+    padding: 30px 0;
+  }
   &__header {
     @include section-heading;
+    h2 {
+      margin-bottom: 14px;
+    }
   }
   img {
     margin: 0 auto;
   }
   &-text {
-    margin-bottom: 70px;
+    margin-bottom: 62px;
   }
 
   .under-line {
-    margin-bottom: 100px;
+    margin-bottom: 87px;
     &:after {
       content: "";
       display: block;
@@ -411,7 +508,7 @@ body {
     }
   }
   &-carousel {
-    margin: 30px auto;
+    margin: 30px auto 18px auto;
     &__text {
       display: inline-flex;
 
@@ -425,9 +522,16 @@ body {
         color: #777;
       }
     }
+
   }
   &__spacing {
     margin: 10px 0;
+  }
+  .carousel-indicators {
+    margin: 25px auto 0 auto !important;
+  }
+  .carousel-inner {
+    margin-bottom: 79px !important;
   }
 }
 /*SECTION FACTS*/
@@ -435,12 +539,15 @@ body {
   padding-top: 70px;
   background: url("http://placehold.it/1600x424") center center no-repeat;
   background-size: cover;
-  padding-bottom: 77px;
+  padding-bottom: 78px;
   color: white;
   z-index: 3;
+  @media (max-width: $screen-sm) {
+    padding: 30px 0;
+  }
   @include section-heading;
   &-text {
-    margin-bottom: 50px;
+    margin-bottom: 48px;
   }
   .fa {
     font: normal normal normal 16px/1 FontAwesome;
@@ -448,7 +555,7 @@ body {
   }
   .media-left {
     vertical-align: top;
-    padding: 20px 19px 0 18px;
+    padding: 20px 34px 0 0;
   }
   .media-body p:first-of-type {
     font-size: 56px;
@@ -457,6 +564,7 @@ body {
   }
   .media-body p:last-of-type {
     color: #c59a6d;
+    margin-top: -9px;
   }
   .content {
     display: inline-block;
@@ -465,9 +573,17 @@ body {
 
 /*SECTION CONTACT*/
 .contact {
-  padding-top: 70px;
-  padding-bottom: 99px;
+  padding-top: 66px;
+  padding-bottom: 63px;
+
+  @media (max-width: $screen-sm) {
+    padding: 30px 0;
+  }
+  h2 {
+    margin-bottom: 14px;
+  }
   @include section-heading;
+
   textarea {
     resize: none;
   }
@@ -491,7 +607,7 @@ body {
     color: white;
     background-color: #c59a6d;
     margin: 53px auto 0;
-    padding: 14px 40px;
+    padding: 13px 40px;
     font-size: 14px;
     border-radius: 0;
     &:hover {
@@ -513,10 +629,13 @@ body {
   padding-top: 70px;
   background: url("http://placehold.it/1600x468") center center no-repeat;
   background-size: cover;
-  padding-bottom: 18px;
+  padding-bottom: 68px;
   color: white;
   position: relative;
   z-index: 1;
+  @media (max-width: $screen-sm) {
+    padding: 30px 0;
+  }
   &__header {
     @include section-heading;
     &:after {
@@ -524,7 +643,7 @@ body {
     }
   }
   &-text {
-    margin-bottom: 70px;
+    margin-bottom: 62px;
   }
   &-block {
     margin: 0 auto 20px auto;
@@ -537,19 +656,28 @@ body {
     font: normal normal normal 16px/1 FontAwesome;
     font-size: 3em!important;
     color: white;
+    @media (max-width: $screen-xs) {
+      font-size: 2em!important;
+    }
   }
   .media-body {
     font-size: 14px;
     width: 148px;
-    p:first-of-type {
-      font-size: 18px;
-      font-family: open_sans_bold;
-      color: #c59a6d;
-      margin-bottom: 30px;
+    p {
+      margin: 0;
+      &:first-of-type {
+        font-size: 18px;
+        font-family: open_sans_bold;
+        color: #c59a6d;
+        margin-bottom: 19px;
+      }
     }
   }
   .media-left {
     vertical-align: top;
+  }
+  a {
+    color: white;
   }
 
 }
@@ -564,7 +692,87 @@ body {
   a {
     color: black;
   }
+  .container {
+    padding: 0 30px;
+  }
 }
+
+/*hover effects styling*/
+a, .btn {
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s;
+
+  &:hover, &:focus {
+    color: #c59a6d !important;
+    outline: none;
+    text-shadow: 1px 2px #0e0f0d;
+  }
+}
+
+.fa-angle-left, .fa-angle-right {
+  &:hover {
+    background-color: transparent !important;
+  }
+  
+}
+
+.disabled {
+  cursor: pointer !important;
+  &:hover, &:focus {
+    text-shadow: none;
+  }
+}
+
+h2 {
+  letter-spacing: -5.5px;
+}
+
+
+/*SWIPER*/
+
+.swiper-container, .swiper-container-modal {
+  width: 100%;
+  height: 100%;
+  //margin:0 auto;
+  //position:relative;
+  //overflow:hidden;
+  //z-index:1;
+}
+
+.swiper-pagination-bullet {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0;
+  text-indent: -999px;
+  border: 1px solid #fff;
+  border-radius: 0;
+  cursor: pointer;
+  background-color: transparent;
+
+  // IE8-9 hack for event handling
+  //
+  // Internet Explorer 8-9 does not support clicks on elements without a set
+  // `background-color`. We cannot use `filter` since that's not viewed as a
+  // background color by the browser. Thus, a hack is needed.
+  // See https://developer.mozilla.org/en-US/docs/Web/Events/click#Internet_Explorer
+  //
+  // For IE8, we set solid black as it doesn't support `rgba()`. For IE9, we
+  // set alpha transparency for the best results possible.
+  background-color: #000 \9; // IE8
+  background-color: rgba(0, 0, 0, 0); // IE9
+
+  &-active {
+    margin: 0;
+    border: 1px solid transparent;
+    background-color: #c59a6d;
+  }
+}
+
+
+
+
 
 
 
