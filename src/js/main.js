@@ -11,7 +11,7 @@ jQuery(window).scroll(function(){
         if( scroll > top && scroll < bottom){
 
             $('a.active').removeClass('active');
-            $('a[href="#'+id+'"]').addClass('active');
+            $('a[href*="#'+id+'"]').addClass('active');
         }
         var $second = $('section:eq(1)');
         var elTop = $second.offset().top;
@@ -37,6 +37,15 @@ $("#menu").on("click",'a[href^="#"]', function (event) {
     event.preventDefault();
     var id  = $(this).attr('href'),
         top = $(id).offset().top;
+
+    $('body,html').animate({scrollTop: top - 80}, 1000);
+
+});
+$("#menu-dark").on("click",'a[href^="index-dark.html"]', function (event) {
+    event.preventDefault();
+    var id  = $(this).attr('href').replace("index-dark.html", ""),
+        top = $(id).offset().top;
+    console.log(id);
     $('body,html').animate({scrollTop: top - 80}, 1000);
 
 });
