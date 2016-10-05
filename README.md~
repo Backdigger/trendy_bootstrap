@@ -8,7 +8,7 @@ To initialize the project:
 4. gulp
 
 
-*To activate the darker color theme, load index-dark.html* 
+*To activate the darker color theme, uncomment 2 last lines of code in the main.js file* 
 
 **UPD: version 1.1 will introduce gulp command for darker theme**
 

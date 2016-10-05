@@ -137,7 +137,31 @@
     list-style: none;
   }
   .carousel-control {
-    margin-bottom: 30px;
+    position: absolute;
+    width: 10%;
+    opacity: 1;
+    margin-top: 413px;
+    display: inline-block;
+    z-index: 3;
+    &.left {
+      left: 70%;
+      @media (max-width: $screen-lg) {
+        left: 73% !important;
+      }
+      @media (max-width: $screen-md) {
+        left: 77% !important;
+      }
+
+      @media (max-width: $screen-xs) {
+        left: 76% !important;
+      }
+    }
+    &.right {
+      right: 10%;
+      @media (max-width: $screen-lg) {
+        right: 3%;
+      }
+    }
     .fa {
       font-size: 2em;
       color: #c59a6d;
@@ -147,6 +171,12 @@
       width: 56px !important;
       margin-bottom: 30px;
       line-height: 48px;
+      @media (max-width: $screen-md) {
+        font-size: 1.5em !important;
+        height: 45px !important;
+        width: 45px !important;
+        line-height: 38px;
+      }
       @media (max-width: $screen-sm) {
         font-size: 1em !important;
         height: 40px !important;
@@ -158,6 +188,9 @@
         width: 25px !important;
         line-height: 22px;
       }
+    }
+    @media (max-width: $screen-xs) {
+      margin-bottom: 0;
     }
   }
 }

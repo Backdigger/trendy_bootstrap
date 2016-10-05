@@ -252,10 +252,6 @@ $(window).resize(function() {
 });
 
 
-/*Theme changing script - uncomment to apply darker theme*/
-// $('body').addClass('dark');
-// $('.navbar-brand').html('<img src="../img/trendy-white.png" alt="TRENDY logo">');
-
 
 /*button toggling off-canvas panel*/
 $('.arrow-btn').click(function() {
@@ -299,7 +295,19 @@ $(function() {
         pagination: '.modal .swiper-pagination',
         nextButton: '.modal .swiper-button-next',
         prevButton: '.modal .swiper-button-prev',
-        wrapper: '.modal .swiper-wrapper',
+        direction: 'horizontal',
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        paginationClickable: true,
+        // spaceBetween: 30,
+        loop: true
+
+    });
+
+    var swiper3 = new Swiper('.s3', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
         direction: 'horizontal',
         slidesPerView: 1,
         slidesPerGroup: 1,
@@ -310,6 +318,11 @@ $(function() {
     });
 });
 
+$(document).on('hidden.bs.modal', function (event) {
+    if ($('.modal:visible').length) {
+        $('body').addClass('modal-open');
+    }
+});
 
 
 
