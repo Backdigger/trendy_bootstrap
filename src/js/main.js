@@ -126,11 +126,11 @@ calendar.drawCalendar = function(month,year) {
 
     // Шапка таблицы с днями недели
 
-    tmp+='<td class="navigation" '+
-        'onclick="calendar.drawCalendar('+(month>1?(month-1):12)+
+    tmp+='<td class="navigation" colspan="2"'+
+        ' onclick="calendar.drawCalendar('+(month>1?(month-1):12)+
         ','+(month>1?year:(year-1))+');"><a><i class="fa fa-angle-left" aria-hidden="true"></i></a><\/td>';
-    tmp+='<td class="navigation" '+
-        'onclick="calendar.drawCalendar('+(month<12?(month+1):1)+
+    tmp+='<td class="navigation" colspan="2"'+
+        ' onclick="calendar.drawCalendar('+(month<12?(month+1):1)+
         ','+(month<12?year:(year+1))+');"><a><i class="fa fa-angle-right" aria-hidden="true"></i></a><\/td>';
 
     tmp+='<tr>';

@@ -157,6 +157,9 @@ body {
     @media (max-width: $screen-xs) {
       margin-left: 0;
     }
+    a {
+      color: white;
+    }
   }
 
 }
@@ -357,7 +360,8 @@ body {
     bottom: 30px;
     margin-top: 30px;
     &:hover {
-      background-color: black;
+      background-color: #353433;
+      color: white;
     }
   }
 }
@@ -417,7 +421,7 @@ body {
       font-size: 11px;
     }
     &:hover {
-      background-color: black;
+      background-color: #353433;
     }
   }
 }

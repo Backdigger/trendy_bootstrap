@@ -76,9 +76,13 @@
     }
   }
 
+  /*custom styling for blog page*/
   .fa {
     color: #c59a6d !important;
     font-size: 2em !important;
+  }
+  .disabled>a {
+    cursor: default !important;
   }
 }
 

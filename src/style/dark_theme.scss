@@ -7,8 +7,11 @@
   }
   .navbar {
     background-color: rgba(199, 164, 127, 1) !important;
-    a.active {
+    a {
       color: white !important;
+      .active, &:hover {
+        color: white !important;
+      }
     }
   }
   .fa-angle-down, .about, .services, .clients, .contact, .footer, .footer a {
@@ -19,6 +22,7 @@
     &:after {
       background-color: #7f7e7e !important;
     }
+    a {color: white;}
   }
   .timeline-badge {
     border: 3px solid #31302f !important;

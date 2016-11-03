@@ -93,7 +93,7 @@
     margin: 34px -2px 85px;
     &:hover {
       background-color: #c59a6d;
-      color: black;
+      color: #353433;
     }
     @media (max-width: $screen-xs) {
       width: 124px;
@@ -309,6 +309,12 @@
     z-index: 5;
     color: #777;
     line-height: 2;
+    .fa:hover {
+      color: #777 !important;
+    }
+    &:hover {
+      box-shadow: none!important;
+    }
   }
   .input-group .form-control {
     position: absolute;
@@ -323,7 +329,7 @@
     font-size: 24px;
     font-family: open_sans_bold;
     margin-top: 66px;
-    letter-spacing: -3.5px;
+    letter-spacing: -0.5px;
     &:after {
       content: "";
       display: block;
@@ -373,6 +379,12 @@
     &:after {
       margin: 22px 0 25px;
     }
+
+  }
+  .label {
+    &:hover {
+      background-color: #f5531c !important;
+    }
   }
   .newsletter {
     margin-top: 60.5px;
@@ -406,6 +418,9 @@
       @media (max-width: $screen-md) {
         padding: 8px 9px;
         font-size: 12px;
+      }
+      &:hover {
+        background-color: #353433;
       }
     }
   }
